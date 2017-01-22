@@ -8,6 +8,7 @@ public class Rectangle extends Shape {
 	}
 	
 	public void draw(Graphics g) {
+		g.setColor(color);
 		g.fillRect(coordinates.x, coordinates.y, width, height);
 	}
 }

@@ -29,7 +29,10 @@ public class Maze extends JPanel implements MouseMotionListener {
 		Maze maze = new Maze();
 		frame.add(maze);
 		
+		maze.addComponent(new Start(new Point(400, 30)));
 		maze.addComponent(new Rectangle(new Point(), 200, 300));
+		maze.addComponent(new Circle(new Point(400,400), 50));
+		maze.addComponent(new Finish(new Point(30, 400)));
 	}
 	
 	private void createComponents() {
@@ -52,11 +55,14 @@ public class Maze extends JPanel implements MouseMotionListener {
         g.fillRect(0, 0, 500, 500);
         
         // paint all components
-        g.setColor(Color.BLACK);
         for(Component c : components) {
         	c.draw(g);
         }
     }
+	
+	public void changeChapeColor(Color c) {
+		Shape.color = c;
+	}
 
 	@Override
 	public void mouseDragged(MouseEvent e) { }
@@ -72,15 +78,17 @@ public class Maze extends JPanel implements MouseMotionListener {
 				if (!wasOnComponentPreviously) {
 					// if mouse went over the start object
 					if (c instanceof Start){
+						System.out.println("Start");
 						// start timer
 					}
 					// if mouse went over the finish object
 					else if (c instanceof Finish){
+						System.out.println("Finish");
 						// prompt a success message?
 					}
 					// if mouse went over a shape
 					else if (c instanceof Shape) {
-						System.out.println("you lost!");
+						System.out.println("You lost!");
 						// add to fail counter?
 						// prompt a failure message?
 					}
