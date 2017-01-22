@@ -12,7 +12,6 @@ import javax.swing.JLabel;
 public class Frame extends JFrame implements MouseMotionListener {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		JFrame frame = new Frame("JFrame Source Demo");
 		// This is an empty content area in the frame
 		JLabel jlbempty = new JLabel("");
