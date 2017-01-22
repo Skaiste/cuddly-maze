@@ -12,7 +12,6 @@ public class Component {
 	public boolean isMouseOver(Point p){
 		boolean isOver = false;
 		
-		// TODO
 		if ((p.x > coordinates.x) && (p.x < coordinates.x + width) &&
 			(p.y > coordinates.y) && (p.y < coordinates.y + height))
 			isOver = true;
