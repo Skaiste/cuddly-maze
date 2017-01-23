@@ -28,10 +28,37 @@ public class Maze extends JPanel implements MouseMotionListener {
 	public static void main(String[] args) {
 		Maze maze = new Maze(500, 500);
 		
-		maze.addComponent(new Start(new Point(490, 10)));
-		maze.addComponent(new Rectangle(new Point(), 200, 300));
-		maze.addComponent(new Circle(new Point(400,400), 50));
-		maze.addComponent(new Finish(new Point(30, 400)));
+		maze.addComponent(new Start(new Point(435, 1)));
+		
+		maze.addComponent(new Rectangle(new Point(0, 0), 433, 33));
+		maze.addComponent(new Rectangle(new Point(0, 33), 33, 467));
+		maze.addComponent(new Rectangle(new Point(466, 0), 34, 500));
+		maze.addComponent(new Rectangle(new Point(0, 466), 500, 34));
+		
+		maze.addComponent(new Rectangle(new Point(400, 33), 33, 133));
+		maze.addComponent(new Rectangle(new Point(233, 33), 67, 33));
+		maze.addComponent(new Rectangle(new Point(166, 33), 34, 167));
+		maze.addComponent(new Rectangle(new Point(66, 66), 67, 34));
+		maze.addComponent(new Rectangle(new Point(333, 66), 33, 167));
+		maze.addComponent(new Rectangle(new Point(100, 100), 33, 66));
+		maze.addComponent(new Rectangle(new Point(233, 100), 67, 66));
+		maze.addComponent(new Rectangle(new Point(300, 100), 33, 33));
+		maze.addComponent(new Rectangle(new Point(66, 133), 34, 133));
+		maze.addComponent(new Rectangle(new Point(133, 200), 133, 33));
+		maze.addComponent(new Rectangle(new Point(266, 200), 34, 66));
+		maze.addComponent(new Rectangle(new Point(333, 200), 133, 33));
+		maze.addComponent(new Rectangle(new Point(66, 266), 167, 34));
+		maze.addComponent(new Rectangle(new Point(200, 300), 133, 33));
+		maze.addComponent(new Rectangle(new Point(333, 266), 100, 34));
+		maze.addComponent(new Rectangle(new Point(333, 300), 33, 133));
+		maze.addComponent(new Rectangle(new Point(33, 333), 133, 33));
+		maze.addComponent(new Rectangle(new Point(200, 333), 33, 100));
+		maze.addComponent(new Rectangle(new Point(400, 333), 66, 34));
+		maze.addComponent(new Rectangle(new Point(66, 400), 134, 33));
+		maze.addComponent(new Rectangle(new Point(266, 366), 34, 100));
+		maze.addComponent(new Rectangle(new Point(366, 400), 134, 33));
+		
+		maze.addComponent(new Finish(new Point(435, 435)));
 	}
 	
 	private void createComponents() {
@@ -106,7 +133,7 @@ public class Maze extends JPanel implements MouseMotionListener {
 						gameStarted = false;
 						System.out.println("Finish");
 						// prompt a success message?
-						//JOptionPane.showMessageDialog(frame, "Sky sucks");
+						JOptionPane.showMessageDialog(frame, "You won!");
 					}
 					// if mouse went over a shape
 					else if (c instanceof Shape && gameStarted) {
@@ -114,7 +141,7 @@ public class Maze extends JPanel implements MouseMotionListener {
 						// add to fail counter?
 						counter++;
 						// prompt a failure message?
-						//JOptionPane.showMessageDialog(frame, "Try again");
+						JOptionPane.showMessageDialog(frame, "Try again");
 						gameStarted = false;
 					}
 				}

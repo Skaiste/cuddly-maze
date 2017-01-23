@@ -6,8 +6,8 @@ public class Start extends Component {
 
 	public Start(Point p) {
 		super(p);
-		width = 10;
-		height = 10;
+		width = 30;
+		height = 30;
 	}
 
 	public void draw(Graphics g) {
