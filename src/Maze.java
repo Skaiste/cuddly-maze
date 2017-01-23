@@ -133,7 +133,7 @@ public class Maze extends JPanel implements MouseMotionListener {
 						gameStarted = false;
 						System.out.println("Finish");
 						// prompt a success message?
-						JOptionPane.showMessageDialog(frame, "You won!");
+						//JOptionPane.showMessageDialog(frame, "You won!");
 					}
 					// if mouse went over a shape
 					else if (c instanceof Shape && gameStarted) {
@@ -141,7 +141,7 @@ public class Maze extends JPanel implements MouseMotionListener {
 						// add to fail counter?
 						counter++;
 						// prompt a failure message?
-						JOptionPane.showMessageDialog(frame, "Try again");
+						//JOptionPane.showMessageDialog(frame, "Try again");
 						gameStarted = false;
 					}
 				}
